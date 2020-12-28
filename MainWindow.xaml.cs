@@ -141,8 +141,8 @@ namespace Crisan_AndreaMaria_Lab5
             action = ActionState.Delete;
             string tempPhonenum = txtPhoneNumber.Text.ToString();
             string tempSubscriber = txtSubscriber.Text.ToString();
-            string tempContractValue = txtContractValue.Text.ToString();
             string tempContractDate = txtContractDate.Text.ToString();
+            string tempContractValue = txtContractValue.Text.ToString();
             btnNew.IsEnabled = false;
             btnEdit.IsEnabled = false;
             btnDelete.IsEnabled = false;
@@ -194,8 +194,8 @@ namespace Crisan_AndreaMaria_Lab5
                     {
                         Phonenum = txtPhoneNumber.Text.Trim(),
                         Subscriber = txtSubscriber.Text.Trim(),
-                        ContractValue = txtContractValue.Text.Trim(),
-                        ContractDate = txtContractDate.Text.Trim()
+                        ContractValue = Int32.Parse(txtContractValue.Text.Trim()),
+                        ContractDate = Convert.ToDateTime(txtContractDate.Text.Trim())
                     };
                     //adaugam entitatea nou creata in context
                     ctx.PhoneNumbers.Add(phoneNumber);
@@ -227,8 +227,8 @@ namespace Crisan_AndreaMaria_Lab5
                     phoneNumber = (PhoneNumber)lstPhones.SelectedItem;
                     phoneNumber.Phonenum = txtPhoneNumber.Text.Trim();
                     phoneNumber.Subscriber = txtSubscriber.Text.Trim();
-                    phoneNumber.ContractValue = txtContractValue.Text.Trim();
-                    phoneNumber.ContractDate = txtContractDate.Text.Trim();
+                    phoneNumber.ContractValue = Int32.Parse(txtContractValue.Text.Trim());
+                    phoneNumber.ContractDate = Convert.ToDateTime(txtContractDate.Text.Trim());
                     //salvam modificarile
                     ctx.SaveChangesClientWins();
                 }
@@ -301,6 +301,11 @@ namespace Crisan_AndreaMaria_Lab5
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
             phoneNumbersView.View.MoveCurrentToNext();
+        }
+
+        private void lstPhones_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
