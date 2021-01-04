@@ -206,10 +206,11 @@ namespace Crisan_AndreaMaria_Lab5
                 {
                     MessageBox.Show(ex.Message);
                 }
+                phoneNumbersView.Source = queryPhoneNumbers.ToList();
                 btnNew.IsEnabled = true;
                 btnEdit.IsEnabled = true;
                 btnSave.IsEnabled = false;
-                
+                btnDelete.IsEnabled = true;
                 btnCancel.IsEnabled = false;
                 lstPhones.IsEnabled = true;
                 btnPrevious.IsEnabled = true;
