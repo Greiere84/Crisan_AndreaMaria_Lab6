@@ -166,7 +166,7 @@ namespace Crisan_AndreaMaria_Lab5
             action = ActionState.Nothing;
             btnNew.IsEnabled = true;
             btnEdit.IsEnabled = true;
-            btnEdit.IsEnabled = true;
+            btnDelete.IsEnabled = true;
             
             btnSave.IsEnabled = false;
             btnCancel.IsEnabled = false;
